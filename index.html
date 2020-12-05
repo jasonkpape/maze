@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="chrome=1,IE=edge" />
+	<title>index</title>
+	<style>
+		html {
+			height:100%;
+		}
+		body {
+			background-color:#4BA0DD;
+			margin:0;
+			height:100%;
+		}
+	</style>
+	<!-- copy these lines to your document head: -->
+
+	<meta name="viewport" content="user-scalable=yes, width=1024" />
+	<link href='https://fonts.googleapis.com/css?family=Texturina&subset=latin' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Sansita+Swashed&subset=latin' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Syne+Mono&subset=latin' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Cinzel&subset=latin' rel='stylesheet' type='text/css'>
+	<link href='https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&subset=latin' rel='stylesheet' type='text/css'>
+	<script type="text/javascript" src="index.hyperesources/jquery.js"></script>
+	
+	<style>
+		body {
+			background-color: #777799;
+		}
+	</style>
+	
+	<script>
+	
+	var gblGrid, 						// A 2D array of numbers representing obstacles, open paths, items, and the exit
+		gblInitialCountdownValue,		// The amount of time in seconds the player has to make it to the exit of the maze
+		gblCountdownInterval,			// A reference to the interval that counts down the timer and the timer bar
+		gblPlayerMoveable,				// Can the player move?
+		gblDifficulty,					// The level of difficulty: 'easy', 'medium', 'hard', or 'nightmare'
+		gblStepCount,					// Keeps track of the number of steps for playing back footstep sound effects; only increments with each footstep sound
+	
+		gblBlueKeyLoc,					// An object containing the grid coordinates of the blue key
+		gblBlueDoorLoc,					// An object containing the grid coordinates of the blue door
+		gblRedKeyLoc,					// An object containing the grid coordinates of the red key
+		gblRedDoorLoc,					// An object containing the grid coordinates of the red door
+		gblGreenKeyLoc,					// An object containing the grid coordinates of the green key
+		gblGreenDoorLoc,				// An object containing the grid coordinates of the green door
+		gblExitLoc,						// An object containing the grid coordinates of the exit
+		
+		gblOpenPath = 1,	// The number in the grid that signifies an open path
+		gblWall = 0,		// The number in the grid that signifies a wall
+		gblBlueKey = 2,		// The number in the grid that signifies the blue key
+		gblBlueDoor = 3,	// The number in the grid that signifies the blue door
+		gblRedKey = 4,		// The number in the grid that signifies the red key
+		gblRedDoor = 5,		// The number in the grid that signifies the red door
+		gblGreenKey = 6,	// The number in the grid that signifies the green key
+		gblGreenDoor = 7,	// The number in the grid that signifies the green door
+		gblMazeExit = 8;	// The number in the grid that signifies the exit
+		
+	var MOVELEFTINTERVAL = false;
+	var INTERVALLEFT;
+	var MOVERIGHTINTERVAL = false;
+	var MOVEUPINTERVAL = false;
+	var MOVEDOWNINTERVAL = false;
+	var INTERVALRIGHT;
+	var INTERVALUP;
+	var INTERVALDOWN;
+		
+	
+	function gblClearMovementIntervals()
+	{
+		clearInterval(INTERVALLEFT);
+		clearInterval(INTERVALUP);
+		clearInterval(INTERVALRIGHT);
+		clearInterval(INTERVALDOWN);
+	}
+	
+	</script>
+		
+
+	<!-- end copy -->
+  </head>
+  <body>
+	<!-- copy these lines to your document: -->
+
+	<div id="index_hype_container" class="HYPE_document" style="margin:auto;position:relative;width:1024px;height:768px;overflow:hidden;">
+		<script type="text/javascript" charset="utf-8" src="index.hyperesources/index_hype_generated_script.js?73208"></script>
+	</div>
+
+	<!-- end copy -->
+	
+
+
+	<!-- text content for search engines: -->
+
+	<div style="display:none" aria-hidden=true>
+
+		<div>ITEMS</div>
+		<div>Footstep2Footstep2
+</div>
+		<div>Footstep4Footstep4
+</div>
+		<div>Footstep1Footstep1
+</div>
+		<div>60</div>
+		<div>Footstep3Footstep3
+</div>
+		<div>Footstep5Footstep5
+</div>
+		<div>MESSAGE</div>
+		<div>PLAY AGAIN?</div>
+		<div>CREDITS</div>
+		<div>Footstep0Footstep0
+</div>
+		<div>2</div>
+		<div>Use the Arrow Keys to Move.
+Grab Items to Get Past Obstacles.
+Get to the Stairs before
+Things Become Too Uncomfortable!</div>
+		<div>NIGHTMARE</div>
+		<div>HARD</div>
+		<div>1</div>
+		<div>EASY</div>
+		<div>MEDIUM</div>
+		<div>3</div>
+		<div>DUNGEON OF DISCOMFORT!</div>
+		<div>GO!</div>
+		<div>Jason Pape
+Darren Pearson
+Jason Pape
+Saint Paul College
+Jason Pape
+Christa
+Person Number 2
+Kirk
+Lena
+Rob
+</div>
+		<div>CREDITS</div>
+		<div>Designed by
+Javascript by
+
+Developed at
+Music and Sound FX
+Usability Testers
+
+Special Thanks to
+
+
+</div>
+
+	</div>
+
+	<!-- end text content: -->
+
+  </body>
+</html>
