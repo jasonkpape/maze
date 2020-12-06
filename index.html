@@ -39,12 +39,12 @@
 		gblDifficulty,					// The level of difficulty: 'easy', 'medium', 'hard', or 'nightmare'
 		gblStepCount,					// Keeps track of the number of steps for playing back footstep sound effects; only increments with each footstep sound
 	
-		gblBlueKeyLoc,					// An object containing the grid coordinates of the blue key
-		gblBlueDoorLoc,					// An object containing the grid coordinates of the blue door
-		gblRedKeyLoc,					// An object containing the grid coordinates of the red key
-		gblRedDoorLoc,					// An object containing the grid coordinates of the red door
-		gblGreenKeyLoc,					// An object containing the grid coordinates of the green key
-		gblGreenDoorLoc,				// An object containing the grid coordinates of the green door
+		gblBlueKeyLoc,					// An object containing the grid coordinates of the blue key (now a purple key)
+		gblBlueDoorLoc,					// An object containing the grid coordinates of the blue door (now a brown door)
+		gblRedKeyLoc,					// An object containing the grid coordinates of the red key	(now a hammer)
+		gblRedDoorLoc,					// An object containing the grid coordinates of the red door (now a boulder)
+		gblGreenKeyLoc,					// An object containing the grid coordinates of the green key (now a carrot)
+		gblGreenDoorLoc,				// An object containing the grid coordinates of the green door (now a monster)
 		gblExitLoc,						// An object containing the grid coordinates of the exit
 		
 		gblOpenPath = 1,	// The number in the grid that signifies an open path
@@ -55,24 +55,33 @@
 		gblRedDoor = 5,		// The number in the grid that signifies the red door
 		gblGreenKey = 6,	// The number in the grid that signifies the green key
 		gblGreenDoor = 7,	// The number in the grid that signifies the green door
-		gblMazeExit = 8;	// The number in the grid that signifies the exit
+		gblMazeExit = 8,	// The number in the grid that signifies the exit
 		
-	var MOVELEFTINTERVAL = false;
-	var INTERVALLEFT;
-	var MOVERIGHTINTERVAL = false;
-	var MOVEUPINTERVAL = false;
-	var MOVEDOWNINTERVAL = false;
-	var INTERVALRIGHT;
-	var INTERVALUP;
-	var INTERVALDOWN;
+		gblMovingLeft = false,		// Is the player currently attempting to move left?
+		gblMovingUp = false,		// Is the player currently attempting to move up?
+		gblMovingRight = false,		// Is the player currently attempting to move right?
+		gblMovingDown = false,		// Is the player currently attempting to move down?
+		gblMoveLeftInterval,		// A reference to the interval that moves the player left
+		gblMoveUpInterval,			// A reference to the interval that moves the player up
+		gblMoveRightInterval,		// A reference to the interval that moves the player right
+		gblMoveDownInterval,		// A reference to the interval that moves the player down
+		
+		gblLeftCode = "37",				// The key code of the left arrow key
+		gblUpCode = "38",				// The key code of the up arrow key
+		gblRightCode = "39",			// The key code of the right arrow key
+		gblDownCode = "40";				// The key code of the down arrow key
 		
 	
 	function gblClearMovementIntervals()
 	{
-		clearInterval(INTERVALLEFT);
-		clearInterval(INTERVALUP);
-		clearInterval(INTERVALRIGHT);
-		clearInterval(INTERVALDOWN);
+		/*
+			This function clears all movement intervals.
+		*/
+		
+		clearInterval(gblMoveLeftInterval);
+		clearInterval(gblMoveUpInterval);
+		clearInterval(gblMoveRightInterval);
+		clearInterval(gblMoveDownInterval);
 	}
 	
 	</script>
@@ -84,7 +93,7 @@
 	<!-- copy these lines to your document: -->
 
 	<div id="index_hype_container" class="HYPE_document" style="margin:auto;position:relative;width:1024px;height:768px;overflow:hidden;">
-		<script type="text/javascript" charset="utf-8" src="index.hyperesources/index_hype_generated_script.js?73208"></script>
+		<script type="text/javascript" charset="utf-8" src="index.hyperesources/index_hype_generated_script.js?60205"></script>
 	</div>
 
 	<!-- end copy -->
